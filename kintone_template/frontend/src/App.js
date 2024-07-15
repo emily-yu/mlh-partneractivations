@@ -2,6 +2,9 @@
 
 // Get started by importing the React JavaScript library & Hooks
 import React, { useState, useEffect } from 'react';
+// import { Card, Col, Row } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css'; 
+// import ListGroup from 'react-bootstrap/ListGroup'; 
 
 // Import the script to make GET API calls
 import getRecords from './requests/getRecords.js';

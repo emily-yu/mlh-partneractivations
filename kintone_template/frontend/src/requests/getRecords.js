@@ -25,7 +25,7 @@ export default async function getRecords() {
       title = record.title.value;
       author = record.author.value;
 
-      return <li key={uniqueKey}><b>{title}</b> written by {author}</li>
+      return <li key={uniqueKey}><b>{title}</b> > {author}</li>
     }
   );
 
