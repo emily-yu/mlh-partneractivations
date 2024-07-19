@@ -25,7 +25,9 @@ function App() {
 
   useEffect(() => {
     getRecords().then(
-      result => setListItems(result)
+      result => {
+        setListItems(result)
+      }
     );
   }, []);
 
