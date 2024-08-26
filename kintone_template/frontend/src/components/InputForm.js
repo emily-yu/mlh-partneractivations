@@ -1,7 +1,7 @@
 // InputForm.js - Form component - Create a form that submits a POST request
 
 // Import required files
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 
 import getRecords from '../requests/getRecords.js';
 import postRecord from '../requests/postRecord.js';
@@ -10,7 +10,7 @@ function InputForm(props) {
 
   /* Create the component that submits a POST request */
   // - - - - - - - START - - - - - - - -
-
+  const newAdded = useRef(null)
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
@@ -18,6 +18,7 @@ function InputForm(props) {
     postRecord(title, author)
       .then(() => {
         console.log(title, author)
+        newAdded = true
         getRecords()
   })
       .then(result => props.setListItems(result))

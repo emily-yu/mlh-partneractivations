@@ -6,9 +6,11 @@
 import Stack from 'react-bootstrap/Stack';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { useRef } from 'react';
 export default function ListRecords(props) {
   console.log(props)
 
+  const latestAdded = useRef(null)
   // inline stylings
   const styles = {
     myCoolButton: {
@@ -19,6 +21,7 @@ export default function ListRecords(props) {
     <div>
       <h1 style={styles.myCoolButton}>React App</h1>
       
+      {latestAdded.current && (<p>{latestAdded.current}</p>)}
       {/* test using react bootstrap components */}
       <Stack gap={5} padding={10}>
         <div className="p-5"> {/* p-N is padding class */}
